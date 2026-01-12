@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
+// Import instructor images as testimonial avatars
+import instructor1 from '@/assets/instructor-1.jpg';
+import instructor2 from '@/assets/instructor-2.jpg';
+import instructor3 from '@/assets/instructor-3.jpg';
+import instructor4 from '@/assets/instructor-4.jpg';
+
 const testimonials = [
   {
     id: 1,
@@ -9,6 +15,7 @@ const testimonials = [
     role: 'Software Developer',
     content: 'LearnHub transformed my career. The web development course was incredibly comprehensive and the instructors were always available to help. I landed my dream job within 3 months!',
     rating: 5,
+    image: instructor1,
   },
   {
     id: 2,
@@ -16,6 +23,7 @@ const testimonials = [
     role: 'Data Analyst',
     content: 'The data science program exceeded my expectations. The hands-on projects and real-world datasets prepared me for actual industry challenges. Highly recommended!',
     rating: 5,
+    image: instructor2,
   },
   {
     id: 3,
@@ -23,6 +31,7 @@ const testimonials = [
     role: 'UX Designer',
     content: 'As a self-taught designer, the UI/UX course filled all the gaps in my knowledge. The community support is amazing and the course materials are top-notch.',
     rating: 5,
+    image: instructor3,
   },
   {
     id: 4,
@@ -30,6 +39,7 @@ const testimonials = [
     role: 'Marketing Manager',
     content: 'The digital marketing course helped me understand modern marketing strategies. I\'ve already implemented several tactics that increased our company\'s ROI by 40%.',
     rating: 5,
+    image: instructor4,
   },
 ];
 
@@ -141,10 +151,12 @@ const Testimonials = () => {
 
                   {/* Author */}
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-coral-light/50 flex items-center justify-center">
-                      <span className="text-lg font-bold text-primary">
-                        {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="w-14 h-14 rounded-full overflow-hidden">
+                      <img 
+                        src={testimonials[currentIndex].image} 
+                        alt={testimonials[currentIndex].name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h4 className="font-bold text-foreground">

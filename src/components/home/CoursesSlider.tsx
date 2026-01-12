@@ -3,6 +3,22 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Star, Clock, Users, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react';
 
+// Import course images
+import courseWebDev from '@/assets/course-web-dev.jpg';
+import courseDataScience from '@/assets/course-data-science.jpg';
+import courseUiDesign from '@/assets/course-ui-design.jpg';
+import courseMarketing from '@/assets/course-marketing.jpg';
+import courseBusiness from '@/assets/course-business.jpg';
+import courseMobile from '@/assets/course-mobile.jpg';
+
+// Import instructor images
+import instructor1 from '@/assets/instructor-1.jpg';
+import instructor2 from '@/assets/instructor-2.jpg';
+import instructor3 from '@/assets/instructor-3.jpg';
+import instructor4 from '@/assets/instructor-4.jpg';
+import instructor5 from '@/assets/instructor-5.jpg';
+import instructor6 from '@/assets/instructor-6.jpg';
+
 const courses = [
   {
     id: 1,
@@ -15,7 +31,9 @@ const courses = [
     students: 15420,
     duration: '42 hours',
     instructor: 'John Smith',
+    instructorImage: instructor1,
     category: 'Development',
+    image: courseWebDev,
   },
   {
     id: 2,
@@ -28,7 +46,9 @@ const courses = [
     students: 12300,
     duration: '38 hours',
     instructor: 'Sarah Johnson',
+    instructorImage: instructor2,
     category: 'Data Science',
+    image: courseDataScience,
   },
   {
     id: 3,
@@ -41,7 +61,9 @@ const courses = [
     students: 8900,
     duration: '28 hours',
     instructor: 'Mike Chen',
+    instructorImage: instructor3,
     category: 'Design',
+    image: courseUiDesign,
   },
   {
     id: 4,
@@ -54,12 +76,14 @@ const courses = [
     students: 11200,
     duration: '32 hours',
     instructor: 'Emily Davis',
+    instructorImage: instructor4,
     category: 'Marketing',
+    image: courseMarketing,
   },
   {
     id: 5,
-    title: 'Financial Analysis & Investing',
-    description: 'Learn stock market analysis, portfolio management, and investment strategies.',
+    title: 'Business Strategy & Management',
+    description: 'Learn leadership, strategic planning, and management skills for business growth.',
     price: 109.99,
     originalPrice: 219.99,
     rating: 4.8,
@@ -67,12 +91,14 @@ const courses = [
     students: 9500,
     duration: '25 hours',
     instructor: 'Robert Williams',
-    category: 'Finance',
+    instructorImage: instructor5,
+    category: 'Business',
+    image: courseBusiness,
   },
   {
     id: 6,
-    title: 'Photography & Video Production',
-    description: 'Master camera techniques, editing, and content creation for any platform.',
+    title: 'Mobile App Development',
+    description: 'Build cross-platform mobile apps with React Native and Flutter.',
     price: 69.99,
     originalPrice: 139.99,
     rating: 4.9,
@@ -80,7 +106,9 @@ const courses = [
     students: 7800,
     duration: '22 hours',
     instructor: 'Lisa Anderson',
-    category: 'Creative',
+    instructorImage: instructor6,
+    category: 'Development',
+    image: courseMobile,
   },
 ];
 
@@ -163,14 +191,12 @@ const CoursesSlider = () => {
               className="flex-shrink-0 w-[340px] bg-card rounded-2xl shadow-card overflow-hidden group"
             >
               {/* Course Image */}
-              <div className="relative h-48 bg-gradient-to-br from-primary/20 to-coral-light/30 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-2xl bg-card/80 backdrop-blur flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">
-                      {course.category.charAt(0)}
-                    </span>
-                  </div>
-                </div>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={course.image} 
+                  alt={course.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
@@ -219,10 +245,12 @@ const CoursesSlider = () => {
 
                 {/* Instructor */}
                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-sm font-medium text-primary">
-                      {course.instructor.charAt(0)}
-                    </span>
+                  <div className="w-8 h-8 rounded-full overflow-hidden">
+                    <img 
+                      src={course.instructorImage} 
+                      alt={course.instructor}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <span className="text-sm text-muted-foreground">
                     {course.instructor}

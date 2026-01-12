@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Sparkles, BookOpen, Users } from 'lucide-react';
 
+// Import hero images
+import heroStudent1 from '@/assets/hero-student-1.png';
+import heroStudent2 from '@/assets/hero-student-2.png';
+import heroStudent3 from '@/assets/hero-student-3.png';
+
 const slides = [
   {
     id: 1,
@@ -14,6 +19,7 @@ const slides = [
       { icon: BookOpen, value: "500+", label: "Courses" },
     ],
     imagePosition: 'right',
+    image: heroStudent1,
   },
   {
     id: 2,
@@ -25,6 +31,7 @@ const slides = [
       { icon: Users, value: "150+", label: "Instructors" },
     ],
     imagePosition: 'left',
+    image: heroStudent2,
   },
   {
     id: 3,
@@ -36,6 +43,7 @@ const slides = [
       { icon: Sparkles, value: "4.9", label: "Rating" },
     ],
     imagePosition: 'center',
+    image: heroStudent3,
   },
 ];
 
@@ -242,19 +250,12 @@ const HeroCarousel = () => {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     className="relative z-10"
                   >
-                    <div className="aspect-square max-w-lg mx-auto bg-gradient-to-br from-primary/20 to-coral-light/30 rounded-[3rem] p-8 flex items-center justify-center">
-                      <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent rounded-[2rem] flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            className="w-32 h-32 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center"
-                          >
-                            <BookOpen className="w-16 h-16 text-primary" />
-                          </motion.div>
-                          <p className="text-lg font-semibold text-foreground">Start Learning Today</p>
-                        </div>
-                      </div>
+                    <div className="aspect-square max-w-lg mx-auto relative">
+                      <img 
+                        src={slide.image} 
+                        alt="Student learning" 
+                        className="w-full h-full object-contain drop-shadow-2xl"
+                      />
                     </div>
                   </motion.div>
                   
@@ -283,6 +284,28 @@ const HeroCarousel = () => {
                     </div>
                   </motion.div>
                 </div>
+              </motion.div>
+            )}
+
+            {/* Center Image for slide 3 */}
+            {slide.imagePosition === 'center' && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="lg:col-span-2 flex justify-center mt-8"
+              >
+                <motion.div
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="max-w-2xl"
+                >
+                  <img 
+                    src={slide.image} 
+                    alt="Students collaborating" 
+                    className="w-full h-auto object-contain drop-shadow-2xl rounded-3xl"
+                  />
+                </motion.div>
               </motion.div>
             )}
           </motion.div>
