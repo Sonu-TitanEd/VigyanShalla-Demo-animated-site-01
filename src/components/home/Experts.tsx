@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 
+// Import instructor images
+import instructor1 from '@/assets/instructor-1.jpg';
+import instructor2 from '@/assets/instructor-2.jpg';
+import instructor3 from '@/assets/instructor-3.jpg';
+import instructor4 from '@/assets/instructor-4.jpg';
+import instructor5 from '@/assets/instructor-5.jpg';
+import instructor6 from '@/assets/instructor-6.jpg';
+
 const experts = [
   {
     id: 1,
@@ -9,6 +17,7 @@ const experts = [
     role: 'Web Development',
     courses: 15,
     students: 25000,
+    image: instructor1,
   },
   {
     id: 2,
@@ -16,6 +25,7 @@ const experts = [
     role: 'Data Science',
     courses: 12,
     students: 18000,
+    image: instructor2,
   },
   {
     id: 3,
@@ -23,6 +33,7 @@ const experts = [
     role: 'UI/UX Design',
     courses: 8,
     students: 12000,
+    image: instructor3,
   },
   {
     id: 4,
@@ -30,6 +41,7 @@ const experts = [
     role: 'Digital Marketing',
     courses: 10,
     students: 15000,
+    image: instructor4,
   },
   {
     id: 5,
@@ -37,13 +49,15 @@ const experts = [
     role: 'Finance & Trading',
     courses: 7,
     students: 9500,
+    image: instructor5,
   },
   {
     id: 6,
     name: 'Lisa Anderson',
-    role: 'Photography',
+    role: 'Mobile Development',
     courses: 6,
     students: 7800,
+    image: instructor6,
   },
 ];
 
@@ -129,14 +143,12 @@ const Experts = () => {
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-x-8 top-8 bottom-0">
                     <div className="w-full h-full bg-gradient-to-br from-primary/20 to-coral-light/30 rounded-t-[100px] rounded-b-[40px] overflow-hidden relative">
-                      {/* Placeholder Avatar */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 rounded-full bg-card flex items-center justify-center shadow-lg">
-                          <span className="text-3xl font-bold text-primary">
-                            {expert.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                      </div>
+                      {/* Expert Image */}
+                      <img 
+                        src={expert.image} 
+                        alt={expert.name}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
                       
                       {/* Hover Overlay */}
                       <motion.div

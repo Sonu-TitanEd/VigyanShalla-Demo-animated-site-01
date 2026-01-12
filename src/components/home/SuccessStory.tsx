@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Play, Award, BookOpen, Users } from 'lucide-react';
 
+// Import video thumbnail
+import successVideoThumb from '@/assets/success-video-thumb.jpg';
+
 const SuccessStory = () => {
   const stats = [
     { icon: Users, value: '25,000+', label: 'Active Students' },
@@ -79,34 +82,38 @@ const SuccessStory = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative aspect-video rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-coral-light/30 shadow-xl">
-              {/* Video Thumbnail Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
+            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl">
+              {/* Video Thumbnail */}
+              <img 
+                src={successVideoThumb} 
+                alt="Success Story Video" 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent flex items-center justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative cursor-pointer"
+                >
+                  {/* Pulsing Rings */}
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="relative cursor-pointer"
-                  >
-                    {/* Pulsing Rings */}
-                    <motion.div
-                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute inset-0 -m-4 rounded-full bg-primary/30"
-                    />
-                    <motion.div
-                      animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0, 0.3] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                      className="absolute inset-0 -m-8 rounded-full bg-primary/20"
-                    />
-                    
-                    {/* Play Button */}
-                    <div className="relative w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                      <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
-                    </div>
-                  </motion.div>
-                  <p className="mt-4 text-foreground font-medium">Watch Our Story</p>
-                </div>
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 -m-4 rounded-full bg-primary/30"
+                  />
+                  <motion.div
+                    animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                    className="absolute inset-0 -m-8 rounded-full bg-primary/20"
+                  />
+                  
+                  {/* Play Button */}
+                  <div className="relative w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                    <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+                  </div>
+                </motion.div>
               </div>
 
               {/* Decorative Elements */}

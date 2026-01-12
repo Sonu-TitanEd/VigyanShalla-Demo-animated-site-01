@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 import { Heart, Users, Globe, Award } from 'lucide-react';
 
+// Import instructor images for avatars
+import instructor1 from '@/assets/instructor-1.jpg';
+import instructor2 from '@/assets/instructor-2.jpg';
+import instructor3 from '@/assets/instructor-3.jpg';
+import instructor4 from '@/assets/instructor-4.jpg';
+import instructor5 from '@/assets/instructor-5.jpg';
+
+const avatars = [instructor1, instructor2, instructor3, instructor4, instructor5];
+
 const Community = () => {
   const features = [
     {
@@ -118,7 +127,7 @@ const Community = () => {
               {/* Overlapping Avatars */}
               <div className="flex items-center mb-6">
                 <div className="flex -space-x-4">
-                  {[1, 2, 3, 4, 5].map((i) => (
+                  {avatars.map((avatar, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, scale: 0 }}
@@ -129,13 +138,11 @@ const Community = () => {
                       className="w-14 h-14 rounded-full border-4 border-card overflow-hidden relative"
                       style={{ zIndex: 5 - i }}
                     >
-                      <div className={`w-full h-full bg-gradient-to-br ${
-                        i % 2 === 0 ? 'from-primary/40 to-primary/20' : 'from-coral-light to-primary/30'
-                      } flex items-center justify-center`}>
-                        <span className="text-sm font-bold text-primary">
-                          {String.fromCharCode(64 + i)}
-                        </span>
-                      </div>
+                      <img 
+                        src={avatar} 
+                        alt={`Student ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
                     </motion.div>
                   ))}
                 </div>
