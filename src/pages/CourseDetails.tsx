@@ -26,7 +26,7 @@ const courseData = {
   price: 99.99,
   originalPrice: 199.99,
   rating: 4.9,
-  reviews: 2834,
+  reviewsCount: 2834,
   students: 15420,
   duration: '42 hours',
   lectures: 312,
@@ -175,7 +175,7 @@ const CourseDetails = () => {
                   <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
                     <span className="font-semibold text-card">{courseData.rating}</span>
-                    <span>({courseData.reviews.toLocaleString()} reviews)</span>
+                    <span>({courseData.reviewsCount.toLocaleString()} reviews)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5" />
@@ -377,7 +377,7 @@ const CourseDetails = () => {
                             <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
                           ))}
                         </div>
-                        <div className="text-sm text-muted-foreground">{courseData.reviews.toLocaleString()} reviews</div>
+                        <div className="text-sm text-muted-foreground">{courseData.reviewsCount.toLocaleString()} reviews</div>
                       </div>
                     </div>
                     
