@@ -56,7 +56,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-sans">
       <Navbar />
 
       {/* Banner */}
@@ -73,7 +73,7 @@ const About = () => {
               <span className="text-primary">About Us</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              About <span className="text-primary">LearnHub</span>
+              About <span className="text-primary">VigyanShaala</span>
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Empowering learners worldwide with quality education and expert-led courses since 2018.
@@ -128,7 +128,7 @@ const About = () => {
                 <span className="text-primary"> Online Education</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                LearnHub was founded with a simple yet powerful vision: to make quality education accessible to everyone, everywhere. We believe that learning should be flexible, engaging, and tailored to individual needs.
+                VigyanShaala was founded with a simple yet powerful vision: to make quality education accessible to everyone, everywhere. We believe that learning should be flexible, engaging, and tailored to individual needs.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Our platform brings together world-class instructors and passionate learners, creating a vibrant community where knowledge is shared and skills are developed. With courses spanning technology, business, creative arts, and more, we're building the future of education.

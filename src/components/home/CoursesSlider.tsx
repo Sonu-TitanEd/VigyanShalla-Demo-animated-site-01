@@ -148,30 +148,6 @@ const CoursesSlider = () => {
               Explore our top-rated courses and start your learning journey today with expert instructors.
             </p>
           </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-4"
-          >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-xl bg-card shadow-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-xl bg-card shadow-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </motion.button>
-          </motion.div>
         </div>
 
         {/* Courses Slider */}
@@ -283,6 +259,30 @@ const CoursesSlider = () => {
             </motion.div>
           ))}
         </div>
+      {/* next prev button */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center gap-16"
+        >
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scroll('left')}
+            className="w-12 h-12 rounded-xl bg-card shadow-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scroll('right')}
+            className="w-12 h-12 rounded-xl bg-card shadow-md flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </motion.button>
+        </motion.div>
 
         {/* Explore All Button */}
         <motion.div

@@ -30,7 +30,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen font-poppins flex">
+    <div className="min-h-screen font-sans flex">
       {/* Left Side - Decorative */}
       <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary/20 to-coral-light/30 items-center justify-center p-8">
         <motion.div
@@ -39,15 +39,6 @@ const SignUp = () => {
           transition={{ delay: 0.2 }}
           className="text-center max-w-md"
         >
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-64 h-64 mx-auto mb-8 bg-gradient-to-br from-primary/40 to-coral-light/60 rounded-[3rem] flex items-center justify-center"
-          >
-            <div className="w-48 h-48 bg-card/80 backdrop-blur rounded-[2rem] flex items-center justify-center">
-              <GraduationCap className="w-24 h-24 text-primary" />
-            </div>
-          </motion.div>
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Join Our Learning Community
           </h2>
@@ -65,10 +56,7 @@ const SignUp = () => {
           className="w-full max-w-md py-8"
         >
           <Link to="/" className="flex items-center gap-2 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">L</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">LearnHub</span>
+            <span className="text-xl font-bold text-foreground">VigyanShaala</span>
           </Link>
 
           <h1 className="text-3xl font-bold text-foreground mb-2">Create Account</h1>

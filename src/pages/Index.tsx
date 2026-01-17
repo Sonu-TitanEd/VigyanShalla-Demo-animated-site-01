@@ -11,7 +11,7 @@ import Testimonials from '@/components/home/Testimonials';
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-sans">
       <Navbar />
       <main>
         <HeroCarousel />

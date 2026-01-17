@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, ChevronDown } from 'lucide-react';
+import Logo from "./VS-logo.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,16 +47,11 @@ const Navbar = () => {
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"
-            >
-              <span className="text-primary-foreground font-bold text-xl">L</span>
-            </motion.div>
-            <span className={`text-xl font-bold ${navTextColor} group-hover:text-primary transition-colors`}>
-              LearnHub
-            </span>
+            <img
+              src={Logo}
+              alt="VigyanShaala Logo"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}

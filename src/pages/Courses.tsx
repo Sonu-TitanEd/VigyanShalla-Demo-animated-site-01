@@ -145,7 +145,7 @@ const Courses = () => {
   const displayedCourses = filteredCourses.slice(startIndex, startIndex + coursesPerPage);
 
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-sans">
       <Navbar />
       
       {/* Banner */}

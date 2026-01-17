@@ -143,22 +143,22 @@ const CourseDetails = () => {
   const sections = ['Overview', 'Curriculum', 'Instructor', 'Reviews', 'Help'];
 
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-sans">
       <Navbar />
 
       {/* Banner */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-foreground to-foreground/90">
-        <div className="container-custom">
+      <section className="pt-32 pb-16 bg-hero-bg">
+        <div className="container-custom ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className="flex items-center gap-2 text-sm text-muted mb-4">
-              <Link to="/" className="hover:text-primary-foreground transition-colors">Home</Link>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/courses" className="hover:text-primary-foreground transition-colors">Courses</Link>
+              <Link to="/courses" className="hover:text-foreground transition-colors">Courses</Link>
               <span>/</span>
-              <span className="text-primary-foreground">{courseData.title}</span>
+              <span className="text-foreground">{courseData.title}</span>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -166,15 +166,15 @@ const CourseDetails = () => {
                 <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full mb-4">
                   Bestseller
                 </span>
-                <h1 className="text-3xl md:text-4xl font-bold text-card mb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   {courseData.title}
                 </h1>
-                <p className="text-card/80 mb-6">{courseData.description}</p>
+                <p className="text-muted-foreground mb-6">{courseData.description}</p>
                 
-                <div className="flex flex-wrap items-center gap-6 text-card/80">
+                <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                    <span className="font-semibold text-card">{courseData.rating}</span>
+                    <span className="font-semibold text-foreground">{courseData.rating}</span>
                     <span>({courseData.reviewsCount.toLocaleString()} reviews)</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -429,8 +429,8 @@ const CourseDetails = () => {
                       <Mail className="w-8 h-8 text-primary mb-4" />
                       <h3 className="font-semibold text-foreground mb-2">Email Support</h3>
                       <p className="text-muted-foreground mb-2">Get help via email within 24 hours</p>
-                      <a href="mailto:support@learnhub.com" className="text-primary font-medium hover:underline">
-                        support@learnhub.com
+                      <a href="mailto:support@VigyanShaala.com" className="text-primary font-medium hover:underline">
+                        support@VigyanShaala.com
                       </a>
                     </div>
                   </div>

@@ -20,7 +20,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen font-poppins flex">
+    <div className="min-h-screen font-sans flex">
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center p-8">
         <motion.div
@@ -29,10 +29,7 @@ const SignIn = () => {
           className="w-full max-w-md"
         >
           <Link to="/" className="flex items-center gap-2 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">L</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">LearnHub</span>
+            <span className="text-xl font-bold text-foreground">VigyanShaala</span>
           </Link>
 
           <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back!</h1>
@@ -165,15 +162,6 @@ const SignIn = () => {
           transition={{ delay: 0.2 }}
           className="text-center max-w-md"
         >
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-64 h-64 mx-auto mb-8 bg-gradient-to-br from-primary/40 to-coral-light/60 rounded-[3rem] flex items-center justify-center"
-          >
-            <div className="w-48 h-48 bg-card/80 backdrop-blur rounded-[2rem] flex items-center justify-center">
-              <span className="text-6xl font-bold text-primary">L</span>
-            </div>
-          </motion.div>
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Start Your Learning Journey
           </h2>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ArrowUp } from 'lucide-react';
+import Logo from "./VS-logo-white.jpg";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -28,8 +29,8 @@ const Footer = () => {
     { name: 'Courses', path: '/courses' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'Privacy Policy', path: '#' },
-    { name: 'Terms of Service', path: '#' },
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms of Service', path: '/terms' },
   ];
 
   const socialLinks = [
@@ -59,10 +60,11 @@ const Footer = () => {
           {/* Brand Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">L</span>
-              </div>
-              <span className="text-xl font-bold">LearnHub</span>
+              <img
+                src={Logo}
+                alt="VigyanShaala Logo"
+                className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-background/70 mb-6 leading-relaxed">
               Empowering learners worldwide with quality education. Join our community and unlock your potential with expert-led courses.
@@ -93,8 +95,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@learnhub.com" className="text-background/70 hover:text-primary transition-colors">
-                  info@learnhub.com
+                <a href="mailto:info@VigyanShaala.com" className="text-background/70 hover:text-primary transition-colors">
+                  info@VigyanShaala.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -151,7 +153,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-background/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-background/60 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} LearnHub. All rights reserved.
+            © {new Date().getFullYear()} VigyanShaala. All rights reserved.
           </p>
           <motion.button
             onClick={scrollToTop}

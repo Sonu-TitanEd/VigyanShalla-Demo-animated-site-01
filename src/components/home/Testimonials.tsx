@@ -13,7 +13,7 @@ const testimonials = [
     id: 1,
     name: 'Alex Thompson',
     role: 'Software Developer',
-    content: 'LearnHub transformed my career. The web development course was incredibly comprehensive and the instructors were always available to help. I landed my dream job within 3 months!',
+    content: 'VigyanShaala transformed my career. The web development course was incredibly comprehensive and the instructors were always available to help. I landed my dream job within 3 months!',
     rating: 5,
     image: instructor1,
   },

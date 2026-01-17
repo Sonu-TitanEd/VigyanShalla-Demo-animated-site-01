@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Address',
-    details: ['info@learnhub.com', 'support@learnhub.com'],
+    details: ['info@VigyanShaala.com', 'support@VigyanShaala.com'],
   },
   {
     icon: Clock,
@@ -49,7 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-sans">
       <Navbar />
 
       {/* Banner */}

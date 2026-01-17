@@ -33,18 +33,18 @@ const slides = [
     imagePosition: 'left',
     image: heroStudent2,
   },
-  {
-    id: 3,
-    title: "Unlock Your Potential",
-    subtitle: "Start Your Learning Journey",
-    description: "Discover a world of knowledge with personalized learning paths designed to help you achieve your goals.",
-    stats: [
-      { icon: BookOpen, value: "50+", label: "Categories" },
-      { icon: Sparkles, value: "4.9", label: "Rating" },
-    ],
-    imagePosition: 'center',
-    image: heroStudent3,
-  },
+  // {
+  //   id: 3,
+  //   title: "Unlock Your Potential",
+  //   subtitle: "Start Your Learning Journey",
+  //   description: "Discover a world of knowledge with personalized learning paths designed to help you achieve your goals.",
+  //   stats: [
+  //     { icon: BookOpen, value: "50+", label: "Categories" },
+  //     { icon: Sparkles, value: "4.9", label: "Rating" },
+  //   ],
+  //   imagePosition: 'center',
+  //   image: heroStudent3,
+  // },
 ];
 
 const HeroCarousel = () => {
@@ -165,7 +165,7 @@ const HeroCarousel = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full"
               >
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Welcome to LearnHub</span>
+                <span className="text-sm font-medium text-primary">Welcome to VigyanShaala</span>
               </motion.div>
 
               <motion.h1
